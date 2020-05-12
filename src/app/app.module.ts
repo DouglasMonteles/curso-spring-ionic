@@ -8,6 +8,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { CategoriaService } from '../services/domain/categoria.service';
+import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { CategoriaService } from '../services/domain/categoria.service';
     StatusBar,
     SplashScreen,
     CategoriaService,
+    ErrorInterceptorProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
