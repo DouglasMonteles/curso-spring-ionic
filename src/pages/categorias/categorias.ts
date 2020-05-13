@@ -22,13 +22,10 @@ export class CategoriasPage {
 
   ionViewDidLoad() {
     this.categoriaService.findAll()
-      .subscribe(
-        (response) => {
+      .subscribe((response) => {
           this.itens = response;
         },
-        (error) => {}
-      );
+        (error) => {});
   }
-
 
 }

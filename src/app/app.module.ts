@@ -10,7 +10,6 @@ import { MyApp } from './app.component';
 import { CategoriaService } from '../services/domain/categoria.service';
 import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 
-
 @NgModule({
   declarations: [
     MyApp
@@ -27,9 +26,10 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
   providers: [
     StatusBar,
     SplashScreen,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     CategoriaService,
-    ErrorInterceptorProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ErrorInterceptorProvider
   ]
 })
+
 export class AppModule {}
