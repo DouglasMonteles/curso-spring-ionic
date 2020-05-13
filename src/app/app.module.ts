@@ -9,6 +9,7 @@ import { MyApp } from './app.component';
 
 import { CategoriaService } from '../services/domain/categoria.service';
 import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
+import { AuthService } from '../services/auth.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,10 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
     CategoriaService,
-    ErrorInterceptorProvider
+    AuthService,
+    ErrorInterceptorProvider,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]
 })
 
