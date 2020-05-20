@@ -18,7 +18,8 @@ export class ProfilePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public localStorage: StorageService,
-    public clienteService: ClienteService
+    public clienteService: ClienteService,
+    public storageService: StorageService
   ) {}
 
   ionViewDidLoad() {
@@ -42,7 +43,7 @@ export class ProfilePage {
     this.clienteService.getImage(this.cliente.id)
       .subscribe(
         response => {
-          this.cliente.imageUrl = `${API_CONFIG.baseUrl}/clientes/picture/view/cp${this.cliente.id}.jpg`;
+          this.cliente.imageUrl = `${API_CONFIG.baseUrl}/clientes/picture/show/cp${this.cliente.id}.jpg`;
         },
         error => {
 
