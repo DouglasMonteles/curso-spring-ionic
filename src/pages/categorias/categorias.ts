@@ -28,4 +28,8 @@ export class CategoriasPage {
         (error) => {});
   }
 
+  showProdutos(): void {
+    this.navCtrl.push('ProdutosPage');
+  }
+
 }

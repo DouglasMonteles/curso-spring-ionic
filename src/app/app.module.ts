@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, LOCALE_ID } from '@angular/core';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http'
@@ -13,6 +13,11 @@ import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { ClienteService } from '../services/domain/cliente.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
+
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -31,6 +36,7 @@ import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
     CategoriaService,
     AuthInterceptorProvider,
     ErrorInterceptorProvider,
