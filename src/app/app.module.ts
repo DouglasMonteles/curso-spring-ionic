@@ -17,6 +17,7 @@ import { ProdutoService } from '../services/domain/produto.service';
 
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
+import { CartService } from '../services/domain/cart.service';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -48,6 +49,7 @@ registerLocaleData(localePt);
     StorageService,
     ClienteService,
     ProdutoService,
+    CartService,
   ]
 })
 
