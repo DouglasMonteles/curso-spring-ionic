@@ -1,18 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule, LOCALE_ID } from '@angular/core';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http'
 
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+
 import { MyApp } from './app.component';
 
-import { CategoriaService } from '../services/domain/categoria.service';
-import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
+import { CategoriaService } from '../services/domain/categoria.service';
 import { StorageService } from '../services/storage.service';
 import { ClienteService } from '../services/domain/cliente.service';
+import { ProdutoService } from '../services/domain/produto.service';
+
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
+import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -43,6 +47,7 @@ registerLocaleData(localePt);
     AuthService,
     StorageService,
     ClienteService,
+    ProdutoService,
   ]
 })
 

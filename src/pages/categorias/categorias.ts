@@ -28,8 +28,8 @@ export class CategoriasPage {
         (error) => {});
   }
 
-  showProdutos(): void {
-    this.navCtrl.push('ProdutosPage');
+  showProdutos(categoria_id: string): void {
+    this.navCtrl.push('ProdutosPage', { categoria_id: categoria_id });
   }
 
 }
