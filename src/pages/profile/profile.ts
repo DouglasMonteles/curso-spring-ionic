@@ -28,7 +28,7 @@ export class ProfilePage {
       this.clienteService.findEmailByEmail(localUser.email)
         .subscribe(
           (response) => {
-            this.cliente = response;
+            this.cliente = response as ClienteDTO; // semelhante ao cast no java
             this.getImageIfExists();
           },
 
